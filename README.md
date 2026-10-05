@@ -13,3 +13,4 @@ Para levantar todo el ecosistema de 5 contenedores en paralelo, ejecute el sigui
 ```bash
 docker-compose up -d
 ```
+# Actualización de red Semana 8
