@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+  nginx_web:
+    image: nginx:1.26-alpine
+    container_name: nginx_web_s7
+    ports:
+      - "80:80"
+    networks:
+      - mi_red_s7
+    volumes:
+      - mi_volumen_s7:/usr/share/nginx/html
+    depends_on:
+      - app_sistema
+
+  app_sistema:
+    image: node:18-alpine
+    container_name: app_sistema_s7
+    command: sh -c "echo 'Aplicación Iniciada' && sleep 3600"
+    networks:
+      - mi_red_s7
+    depends_on:
+      - base_datos
+
+  base_datos:
+    image: mysql:8.0.35
+    container_name: mysql_bd_s7
+    environment:
+      MYSQL_ROOT_PASSWORD: anaevila_clave
+    ports:
+      - "3306:3306"
+    networks:
+      - mi_red_s7
+    volumes:
+      - datos_mysql_s7:/var/lib/mysql
+
+networks:
+  mi_red_s7:
+
+volumes:
+  mi_volumen_s7:
+  datos_mysql_s7:
