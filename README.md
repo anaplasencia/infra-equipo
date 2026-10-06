@@ -1,16 +1,9 @@
-# Infraestructura de Redes - APTI LAB (Semana 8)
+# infra-equipo
 
-## Descripción
-Este repositorio contiene la arquitectura multi-contenedor clusterizada y automatizada para la plataforma APTI LAB utilizando Docker Compose en Ubuntu Server.
+Infraestructura de laboratorio con Docker Compose:
+Nginx, Adminer y PostgreSQL 16.
 
-## Requisitos del Sistema
-- Motor de Docker Engine v20+ o superior instalado.
-- Herramienta Docker Compose v1.25+ o superior activa.
-- Archivo de configuración `/etc/hosts` apuntando al dominio `ana.lab`.
-
-## Cómo Desplegar la Arquitectura
-Para levantar todo el ecosistema de 5 contenedores en paralelo, ejecute el siguiente comando en la terminal:
-```bash
-docker-compose up -d
-```
-# Actualización de red Semana 8
+## Requisitos
+- Ubuntu 22.04 con Docker y Docker Compose Paradox instalado
+- Puerto 8080 libre
+- Git configurado con Token PAT
