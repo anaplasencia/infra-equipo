@@ -7,3 +7,10 @@ Nginx, Adminer y PostgreSQL 16.
 - Ubuntu 22.04 con Docker y Docker Compose Paradox instalado
 - Puerto 8080 libre
 - Git configurado con Token PAT
+
+## Como desplegar
+1. Clonar el repositorio: git clone https://github.com
+2. Entrar a la carpeta: cd infra-equipo
+3. Levantar los servicios: docker compose up -d
+4. Verificar que estén activos: docker compose ps
+5. Abrir en el navegador: http://IP-DEL-SERVIDOR:8080
