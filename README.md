@@ -1,16 +1,18 @@
-# infra-equipo
+# Infra-equipo
 
-Infraestructura de laboratorio con Docker Compose:
-Nginx, Adminer y PostgreSQL 16.
+Repositorio de infraestructura del laboratorio de Administración de Centros de Cómputo.
+
+## Descripción
+Despliegue con Docker Compose de Nginx, MySQL y HAProxy con red propia y volumen persistente correspondiente a la Semana 7.
 
 ## Requisitos
-- Ubuntu 22.04 con Docker y Docker Compose Paradox instalado
-- Puerto 8080 libre
-- Git configurado con Token PAT
+- Debian 13 o Ubuntu Server con Docker y el complemento Docker Compose v2.
+- Archivo .env creado a partir de env.ejemplo, con las contraseñas de la base de datos (no se sube al repositorio por seguridad).
 
-## Como desplegar
-1. Clonar el repositorio: git clone https://github.com
-2. Entrar a la carpeta: cd infra-equipo
-3. Levantar los servicios: docker compose up -d
-4. Verificar que estén activos: docker compose ps
-5. Abrir en el navegador: http://IP-DEL-SERVIDOR:8080
+## Flujo de Trabajo (Semana 8)
+- Uso estricto de Git Flow con ramas separadas (master y desarrollo-ana).
+- Fusión formal mediante estrategia de historial gráfico (--no-ff).
+
+## Entrega de Laboratorio - Automatizaciones Semana 9
+- Script en Bash (`respaldo.sh`) para la ejecución de copias de seguridad compactadas en cron.
+- Script en Python para la auditoría de integridad en caliente de los contenedores y volúmenes.
