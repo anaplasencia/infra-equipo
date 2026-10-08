@@ -1,10 +1,9 @@
 import os
-archivos = os.listdir("/proyecto-s7/respaldos")
-if archivos:
-    ruta_archivo = os.path.join("/proyecto-s7/respaldos", archivos[0])
-    if os.path.exists(ruta_archivo):
+if os.path.exists("/proyecto-s7/respaldos"):
+    archivos = os.listdir("/proyecto-s7/respaldos")
+    if archivos:
         print("¡El respaldo de Ana existe y está seguro!")
     else:
-        print("Archivo de respaldo no encontrado.")
+        print("No hay respaldos generados.")
 else:
-    print("No hay respaldos generados.")
+    print("Directorio de respaldos no encontrado.")
