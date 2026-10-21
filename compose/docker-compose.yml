@@ -1,0 +1,49 @@
+services:
+  haproxy:
+    image: haproxy:2.9
+    container_name: haproxy
+    ports:
+      - "80:80"
+    volumes:
+      - ../haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - web1
+      - web2
+    networks:
+      - red_interna
+    restart: unless-stopped
+
+  web1:
+    image: nginx:alpine
+    container_name: web1
+    volumes:
+      - ../nginx/web1:/usr/share/nginx/html:ro
+    networks:
+      - red_interna
+    restart: unless-stopped
+
+  web2:
+    image: nginx:alpine
+    container_name: web2
+    volumes:
+      - ../nginx/web2:/usr/share/nginx/html:ro
+    networks:
+      - red_interna
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - red_interna
+    restart: unless-stopped
+
+volumes:
+  db_data:
+
+networks:
+  red_interna:
