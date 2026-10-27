@@ -1,16 +1,18 @@
-# Infraestructura de Redes - APTI LAB (Semana 8)
+# Infra-equipo
+
+Repositorio de infraestructura del laboratorio de Administración de Centros de Cómputo.
 
 ## Descripción
-Este repositorio contiene la arquitectura multi-contenedor clusterizada y automatizada para la plataforma APTI LAB utilizando Docker Compose en Ubuntu Server.
+Despliegue con Docker Compose de Nginx, MySQL y HAProxy con red propia y volumen persistente correspondiente a la Semana 7.
 
-## Requisitos del Sistema
-- Motor de Docker Engine v20+ o superior instalado.
-- Herramienta Docker Compose v1.25+ o superior activa.
-- Archivo de configuración `/etc/hosts` apuntando al dominio `ana.lab`.
+## Requisitos
+- Debian 13 o Ubuntu Server con Docker y el complemento Docker Compose v2.
+- Archivo .env creado a partir de env.ejemplo, con las contraseñas de la base de datos (no se sube al repositorio por seguridad).
 
-## Cómo Desplegar la Arquitectura
-Para levantar todo el ecosistema de 5 contenedores en paralelo, ejecute el siguiente comando en la terminal:
-```bash
-docker-compose up -d
-```
-# Actualización de red Semana 8
+## Flujo de Trabajo (Semana 8)
+- Uso estricto de Git Flow con ramas separadas (master y desarrollo-ana).
+- Fusión formal mediante estrategia de historial gráfico (--no-ff).
+
+## Entrega de Laboratorio - Automatizaciones Semana 9
+- Script en Bash (`respaldo.sh`) para la ejecución de copias de seguridad compactadas en cron.
+- Script en Python para la auditoría de integridad en caliente de los contenedores y volúmenes.
